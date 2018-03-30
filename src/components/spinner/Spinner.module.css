@@ -1,0 +1,51 @@
+@import '../../styles/variables.css';
+
+:root {
+    --spinner-size-normal: 50px;
+    --spinner-size-small: 30px;
+}
+
+.container {
+    position: relative;
+}
+
+.spinner {
+    opacity:1;
+    border: 10px solid var(--color-primary);
+    border-color: transparent var(--color-primary) transparent transparent;
+    border-radius: 50%;
+    width: var(--spinner-size-normal);
+    height: var(--spinner-size-normal);
+    transition: opacity 500ms linear;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin-around 1000ms infinite linear;
+    position: absolute; 
+}
+
+@keyframes spin-around {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%,-50%)  rotate(360deg);
+    }
+}
+
+@keyframes stop-spinning {
+    0% {
+        transform: translate(-50%,-50%)  rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%,-50%)  rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .spinner {
+        border-width: 7px;
+        width: var(--spinner-size-small);
+        height: var(--spinner-size-small);
+    }
+}

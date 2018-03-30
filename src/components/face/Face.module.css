@@ -1,0 +1,35 @@
+@import '../../styles/variables.css';
+
+@keyframes dash {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.face {
+    display: flex;
+    flex: 1;
+    max-width: 50%;
+}
+
+.svg {
+    width: 100%;
+    height: auto;
+}
+
+.face path {
+    fill: transparent;
+    transition: all 2s linear;
+    stroke-width: 30px;
+    stroke: var(--color-primary);
+    stroke-dasharray: 52981;
+    stroke-dashoffset: 52981;
+    animation: dash 4s linear forwards;
+}
+
+@media screen and (max-width: 680px) {
+    .face path {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+}

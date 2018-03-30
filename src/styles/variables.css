@@ -1,0 +1,54 @@
+:root {
+    --color-primary: #444;
+    --text-color: var(--color-primary);
+    --text-color-light: #808080;
+    --text-color-dark: #3b3737;
+}
+
+html {
+    font-size: calc(0.6em + 1vw);
+    line-height: 1.5;
+}
+
+/* ========================================================================
+   Variables
+   ======================================================================== */ 
+
+:root {
+    /* ideal line length 66chrs -> max width 33rem */
+    --max-width-content: 33rem;
+    --max-width-wrap: 100%;
+
+    /* Typography variables */
+    --size-mod-4: 2rem; /* 3.375rem */
+    --size-mod-3: 1.85rem; /* 2.25rem */
+    --size-mod-2: 1.55rem; /* 1.5rem */
+    --size-mod-1: 1rem; /* 1rem */
+
+    /* Spacings */
+    --vertical-spacing: 1.5rem;
+    --base-spacing: 40px;
+}
+
+h1 {
+    font-size: var(--size-mod-4);
+}
+
+h2 {
+    font-size: var(--size-mod-3);
+}
+
+h3 {
+    font-size: var(--size-mod-2);
+}
+
+h4, h5, h6 {
+    font-size: var(--size-mod-1);
+}
+
+@media (min-width: 1280px) {
+    /* 0.6 + 1280vw == 0.6em + 1.28 == 1.88 */
+    html {
+        font-size: 1.88em;
+    }
+}

@@ -1,0 +1,10 @@
+@import '../../styles/variables.css';
+
+.github {
+    min-height: 10vh;
+    position: relative;
+}
+
+.keyword {
+    font-weight: 400;
+}

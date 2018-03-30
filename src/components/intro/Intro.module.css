@@ -1,0 +1,47 @@
+@import '../../styles/variables.css';
+
+.intro {
+    margin: 0 auto;
+    min-height: 480px;
+    max-height: 750px;
+    height: 60vh;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    flex: 1;
+    margin-left: var(--base-spacing)
+}
+
+.icon {
+    color: var(--color-primary);
+}
+
+.social {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.socialLink {
+    display: inline-block;
+    flex: 1;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.icon path {
+    fill: var(--color-primary);
+}
+
+.icon:hover path {
+    fill: var(--text-color-dark);
+}
+
+@media (max-width: 680px) {
+    .intro {
+        flex-direction: column;
+    }
+}
