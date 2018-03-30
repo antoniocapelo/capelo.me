@@ -13,7 +13,7 @@
 
 .text {
     flex: 1;
-    margin-left: var(--base-spacing)
+    margin-left: var(--base-spacing);
 }
 
 .icon {
@@ -42,6 +42,12 @@
 
 @media (max-width: 680px) {
     .intro {
+        min-height: 320px;
         flex-direction: column;
+    }
+
+    .text {
+        flex: 1;
+        margin-left: 0;
     }
 }
