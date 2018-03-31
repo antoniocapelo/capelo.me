@@ -1,7 +1,6 @@
 @import '../../styles/variables.css';
 
 .blog {
-    min-height: 10vh;
     position: relative;
 }
 

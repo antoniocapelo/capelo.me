@@ -1,0 +1,21 @@
+@import '../../styles/variables.css';
+
+.photos {
+    margin-top: var(--vertical-spacing);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+
+@media (max-width: 860px) {
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .photos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -11,6 +11,8 @@ const defaultStyle = {
 const transitionStyles = {
     entering: { opacity: 0 },
     entered:  { opacity: 1 },
+    exiting: { opacity: 0.99, },
+    exited: { opacity: 0.01, display: 'none' },
 };
 
 export default ({ in: inProp, children }) => (

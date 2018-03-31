@@ -6,7 +6,7 @@
 }
 
 html {
-    font-size: calc(0.6em + 1vw);
+    font-size: calc(0.7em + 1vw);
     line-height: 1.5;
 }
 
@@ -46,9 +46,15 @@ h4, h5, h6 {
     font-size: var(--size-mod-1);
 }
 
-@media (min-width: 1280px) {
-    /* 0.6 + 1280vw == 0.6em + 1.28 == 1.88 */
+@media (max-width: 400px) {
     html {
-        font-size: 1.88em;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1280px) {
+    /* 0.6 + 1280vw == 0.7em + 1.28 == 1.98 */
+    html {
+        font-size: 1.98em;
     }
 }

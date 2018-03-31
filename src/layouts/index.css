@@ -371,7 +371,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.4rem;
 }
 figure {
   margin-left: 0;
@@ -624,16 +624,13 @@ h1 {
 
 }
 
-* {
-    font-display: fallback;
-}
-
 section {
     padding: 0 20px;
 }
 
 section + section {
-    margin-top: var(--vertical-spacing);
+    min-height: 40px;
+    margin-top: calc(var(--vertical-spacing) / 2);
 }
 
 html {
@@ -642,12 +639,6 @@ html {
     line-height: 1.5;
 }
 
-@media (min-width: 1280px) {
-    /* 0.6 + 1280vw == 0.6em + 1.28 == 1.88 */
-    html {
-        font-size: 1.88em;
-    }
-}
 
 a {
     color: var(--color-primary);
