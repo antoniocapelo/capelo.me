@@ -1,10 +1,9 @@
 import React from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import classnames from 'classnames'
 
 import Face from '../face/Face'
 import ReactTypewrite from 'react-typewrite'
-import 'react-typewrite/lib/ReactTypewrite.css'
-
 import Aside from '../typo/aside/Aside'
 
 import styles from './Intro.module.css'
@@ -33,31 +32,54 @@ const socialStuff = [
         }
 ];
 
-const Text = () => (
-    <div className={ styles.text }>
-        <ReactTypewrite timeout={ 250 }>
-            <h1>
-                Hi there!
-            </h1>
-        </ReactTypewrite>
-        <Aside>
-            I&#39;m António Capelo, a Front-End Engineer from Portugal
-        </Aside>
-        <div className={ styles.social }>
-            {socialStuff.map((el) => (
-                <a role="link" key={el.name} href={ el.url } target="_blank" rel="noopener nofollow" className={ styles.socialLink }>
-                    <FontAwesomeIcon className={styles.icon } icon={ el.icon }/>
-                </a>
-            ))}
-        </div>
+class Writer extends React.Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return false;
+    }
 
-    </div>
-);
+    render() {
+        return (
+            <ReactTypewrite timeout={ 250 } onFinish={ this.props.onFinish }>
+                <h1>
+                    Hi there!
+                </h1>
+            </ReactTypewrite>
+        );
+    }
+
+    onWriteFinish = () => this.setState({ writeFinished: true })
+}
+
+class Text extends React.Component {
+    state = {
+        writeFinished: false
+    }
+
+    render() {
+        return (
+            <div className={ styles.text }>
+                <Writer onFinish={ this.onWriteFinish }/>
+                <Aside className={ classnames(styles.willAppear, { [styles.show]: this.state.writeFinished }) } >
+                    I&#39;m António Capelo, a Front-End Engineer from Portugal
+                </Aside>
+                <div className={ classnames(styles.social, styles.willAppear, { [styles.show]: this.state.writeFinished }) }>
+                    {socialStuff.map((el) => (
+                        <a role="link" key={el.name} href={ el.url } target="_blank" rel="noopener nofollow" className={ styles.socialLink }>
+                            <FontAwesomeIcon className={styles.icon } icon={ el.icon }/>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
+    onWriteFinish = () => this.setState({ writeFinished: true })
+}
 
 
-const Intro = () => (
+const Intro = ({ showFace }) => (
     <section className={ styles.intro} >
-        <Face />
+        <Face show={ showFace }/>
         <Text />
     </section>
 )

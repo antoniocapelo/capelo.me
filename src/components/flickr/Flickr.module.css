@@ -2,20 +2,29 @@
 
 .photos {
     margin-top: var(--vertical-spacing);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-flow: row wrap;
     position: relative;
+}
+
+.photos > * {
+    flex: 1 0 33.33%;
 }
 
 
 @media (max-width: 860px) {
-    .photos {
-        grid-template-columns: repeat(2, 1fr);
+    .photos > * {
+        flex: 1 0 50%;
     }
 }
 
 @media (max-width: 680px) {
-    .photos {
-        grid-template-columns: repeat(1, 1fr);
+    .photos > * {
+        flex: 1 0 100%;
     }
+
+    .photos > div:nth-child:nth-child(odd) {
+        flex: 1 0 50%;
+    }
+
 }

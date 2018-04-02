@@ -25,6 +25,15 @@
     margin-top: 1rem;
 }
 
+.willAppear {
+    opacity: 0;
+    transition: opacity 350ms ease-in 250ms;
+}
+
+.show {
+    opacity: 1;
+}
+
 .socialLink {
     display: inline-block;
     flex: 1;

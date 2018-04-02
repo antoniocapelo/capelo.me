@@ -1,11 +1,12 @@
 import React from 'react'
+import classnames from 'classnames'
 
 import styles from './Face.module.css'
 
-const Face = () => (
-    <div className={ styles.face }>
+const Face = ({ show }) => (
+    <div className={ classnames(styles.face, styles.willAppear, { [styles.show]: show }) }>
     <svg version="1.0" className={ styles.svg} xmlns="http://www.w3.org/2000/svg"
-        width="1360.000000pt" height="879.000000pt" viewBox="0 0 1360.000000 879.000000"
+         height="879.000000pt" viewBox="0 0 1360.000000 879.000000"
         preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,879.000000) scale(0.100000,-0.100000)"
         fill="#000000" stroke="none">

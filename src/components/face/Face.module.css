@@ -12,6 +12,15 @@
     max-width: 50%;
 }
 
+.willAppear {
+    opacity: 0;
+    transition: opacity 350ms ease-in 250ms;
+}
+
+.show {
+    opacity: 1;
+}
+
 .svg {
     width: 100%;
     height: auto;

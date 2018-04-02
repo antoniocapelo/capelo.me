@@ -29,9 +29,11 @@ class IndexPage extends Component {
             url: undefined,
             category: undefined,
         },
+        hasMounted: false
     }
 
     componentDidMount() {
+        this.setState({ hasMounted: true })
         getFlickrPhotos()
         .then(({ data }) => this.setState({
             photos: {
@@ -72,7 +74,7 @@ class IndexPage extends Component {
     render() {
         return (
             <main className={ styles.home }>
-                <Intro />
+                <Intro showFace={ this.state.hasMounted }/>
                 <Description />
                 <Github { ...this.state.ghInfo } />
                 <BlogFrontPage { ...this.state.latestPost } />
