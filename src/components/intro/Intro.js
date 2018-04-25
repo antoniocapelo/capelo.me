@@ -59,10 +59,10 @@ class Text extends React.Component {
         return (
             <div className={ styles.text }>
                 <Writer onFinish={ this.onWriteFinish }/>
-                <Aside className={ classnames(styles.willAppear, { [styles.show]: this.state.writeFinished }) } >
+                <Aside className={ classnames(styles.willAppear, styles.show) } >
                     I&#39;m António Capelo, a Front-End Engineer from Portugal
                 </Aside>
-                <div className={ classnames(styles.social, styles.willAppear, { [styles.show]: this.state.writeFinished }) }>
+                <div className={ classnames(styles.social, styles.willAppear, styles.show) }>
                     {socialStuff.map((el) => (
                         <a role="link" key={el.name} href={ el.url } target="_blank" rel="noopener nofollow" className={ styles.socialLink }>
                             <FontAwesomeIcon className={styles.icon } icon={ el.icon }/>
@@ -79,7 +79,7 @@ class Text extends React.Component {
 
 const Intro = ({ showFace }) => (
     <section className={ styles.intro} >
-        <Face show={ showFace }/>
+        <Face show={ true }/>
         <Text />
     </section>
 )
