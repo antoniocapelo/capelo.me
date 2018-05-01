@@ -7,8 +7,12 @@
     position: relative;
 }
 
-.photos > * {
+.photo {
     flex: 1 0 33.33%;
+}
+
+.photo:nth-last-child(2):nth-child(3n) {
+  min-width: 50%; /*dealing with remainders of 1 */
 }
 
 

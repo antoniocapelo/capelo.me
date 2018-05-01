@@ -1,4 +1,5 @@
 import React from 'react'
+import '@fortawesome/fontawesome/styles.css'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import classnames from 'classnames'
 

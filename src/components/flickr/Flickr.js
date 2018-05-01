@@ -8,7 +8,7 @@ import ImageLoader from '../image-loader/ImageLoader'
 
 const renderPhoto = (photo, idx) => {
     return (
-        <ImageLoader key={idx} photo={photo} />
+        <ImageLoader className={styles.photo} key={idx} photo={photo} />
     );
 };
 

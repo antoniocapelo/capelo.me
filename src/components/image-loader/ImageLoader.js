@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import Fade from '../fade/Fade'
 import Spinner from '../spinner/Spinner'
 import styles from './ImageLoader.module.css';
@@ -21,7 +22,7 @@ export default class ImageLoader extends React.PureComponent {
             backgroundImage: 'url(' + this.state.photo.src + ')'
         } : {};
         return (
-            <div className={ styles.photoContainer }>
+            <div className={ classNames(styles.photoContainer, this.props.className) }>
                 <Fade in={ !this.state.photoLoaded }>
                     { !this.state.photoLoaded && <a className={ styles.anchor} href={this.state.photo ? this.state.photo.url : ''} target="_blank">
                         <Spinner key={this.props.key} active={true} />
