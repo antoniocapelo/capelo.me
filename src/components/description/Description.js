@@ -12,6 +12,9 @@ const Description = () => (
             I do most of my work on the <Keyword>frontend</Keyword> side, exploring the Javascript Lands and doin' it for the client :) 
         </Copy>
         <Copy className={ styles.descLine }>
+            I made <a href="http://8-bars-a-week.capelo.me" target="_blank">8 Bars A Week</a>, an online audio journal where I post new beats on a weekly basis.  
+        </Copy>
+        <Copy className={ styles.descLine }>
             <strong>coffee</strong> / <strong>beatmaking</strong> / <strong>bicycles</strong> / <strong>web lover</strong>. 
         </Copy>
     </section>

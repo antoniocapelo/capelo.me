@@ -625,11 +625,11 @@ h1 {
 }
 
 section {
-    padding: 0 20px;
+    padding: 0 1.25rem;;
 }
 
 section + section {
-    min-height: 40px;
+    min-height: 2.5rem;
     margin-top: calc(var(--vertical-spacing) / 2);
 }
 
